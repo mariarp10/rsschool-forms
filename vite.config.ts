@@ -5,6 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
+  resolve: {
+    alias: {
+      '@icons': new URL('src/assets/icons', import.meta.url).pathname,
+      '@components': new URL('src/components', import.meta.url).pathname,
+    },
+  },
+
   test: {
     environment: 'jsdom',
     globals: true,

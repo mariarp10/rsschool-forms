@@ -9,6 +9,10 @@
     "incremental": true,
     "types": ["vite/client"],
     "jsx": "react-jsx",
+    "paths": {
+      "@icons/*": ["./src/assets/icons/*"],
+      "@components/*": ["./src/components/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
