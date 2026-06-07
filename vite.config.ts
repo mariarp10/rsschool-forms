@@ -9,11 +9,13 @@ export default defineConfig({
     alias: {
       '@icons': new URL('src/assets/icons', import.meta.url).pathname,
       '@components': new URL('src/components', import.meta.url).pathname,
+      '@utils': new URL('src/utils', import.meta.url).pathname,
     },
   },
 
   test: {
     environment: 'jsdom',
+    setupFiles: '__tests__/setup.ts',
     globals: true,
 
     coverage: {
