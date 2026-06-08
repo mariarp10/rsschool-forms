@@ -56,7 +56,9 @@ export const ControlledForm: FC<ControlledFormProps> = ({ closeModal }) => {
   return (
     <form
       className={cn('form')}
-      onSubmit={handleSubmit(handleValidSubmit)}
+      onSubmit={(event) => {
+        void handleSubmit(handleValidSubmit)(event);
+      }}
       noValidate
     >
       <label htmlFor="controlled-name">Name</label>

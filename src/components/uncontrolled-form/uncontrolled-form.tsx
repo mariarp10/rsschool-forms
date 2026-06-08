@@ -100,7 +100,13 @@ export const UncontrolledForm: FC<UncontrolledFormProps> = ({ closeModal }) => {
   };
 
   return (
-    <form className={cn('form')} onSubmit={handleSubmit} noValidate>
+    <form
+      className={cn('form')}
+      onSubmit={(event) => {
+        void handleSubmit(event);
+      }}
+      noValidate
+    >
       <label htmlFor="name">Name</label>
       <input id="name" name="name" type="text" />
       <ValidationMessage message={errors.name} />
