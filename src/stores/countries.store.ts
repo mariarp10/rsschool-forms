@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { COUNTRIES } from '@utils/constants';
 
 type CountriesState = {
-  countries: readonly string[];
+  countries: string[];
 };
 
 export const useCountriesStore = create<CountriesState>(() => ({
