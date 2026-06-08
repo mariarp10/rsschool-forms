@@ -74,9 +74,9 @@ export const ControlledForm: FC<ControlledFormProps> = ({ closeModal }) => {
       <label htmlFor="controlled-gender">Gender</label>
       <select id="controlled-gender" {...register('gender')}>
         <option value="">Choose your gender</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        <option value="prefer-not-to-say">Prefer not to say</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Prefer not to say">Prefer not to say</option>
       </select>
       <ValidationMessage message={errors.gender?.message} />
 

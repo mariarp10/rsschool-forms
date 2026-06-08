@@ -116,9 +116,9 @@ export const UncontrolledForm: FC<UncontrolledFormProps> = ({ closeModal }) => {
       <label htmlFor="gender">Gender</label>
       <select id="gender" name="gender">
         <option value="">Choose your gender</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        <option value="prefer-not-to-say">Prefer not to say</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Prefer not to say">Prefer not to say</option>
       </select>
       <ValidationMessage message={errors.gender} />
 

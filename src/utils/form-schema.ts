@@ -53,7 +53,7 @@ export const formSchema = z
     ),
     email: z.email('Invalid email address'),
     gender: z.enum(
-      ['female', 'male', 'prefer-not-to-say'],
+      ['Female', 'Male', 'Prefer not to say'],
       'Please select your gender',
     ),
     conditions: z.literal(true, {

@@ -3,7 +3,7 @@ export type UserProfile = {
   name: string;
   age: number;
   email: string;
-  gender: 'male' | 'female' | 'prefer-not-to-say';
+  gender: 'Male' | 'Female' | 'Prefer not to say';
   image: string;
   country: string;
 };
