@@ -82,12 +82,14 @@ export const ControlledForm: FC<ControlledFormProps> = ({ closeModal }) => {
       </select>
       <ValidationMessage message={errors.gender?.message} />
 
-      <label htmlFor="controlled-conditions">Accept Terms and Conditions</label>
-      <input
-        id="controlled-conditions"
-        type="checkbox"
-        {...register('conditions')}
-      />
+      <label htmlFor="controlled-conditions">
+        Accept Terms and Conditions
+        <input
+          id="controlled-conditions"
+          type="checkbox"
+          {...register('conditions')}
+        />
+      </label>
       <ValidationMessage message={errors.conditions?.message} />
       <label htmlFor="controlled-image">Image</label>
       <Controller

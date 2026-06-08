@@ -128,8 +128,10 @@ export const UncontrolledForm: FC<UncontrolledFormProps> = ({ closeModal }) => {
       </select>
       <ValidationMessage message={errors.gender} />
 
-      <label htmlFor="conditions">Accept Terms and Conditions</label>
-      <input id="conditions" name="conditions" type="checkbox" />
+      <label htmlFor="conditions">
+        Accept Terms and Conditions
+        <input id="conditions" name="conditions" type="checkbox" />
+      </label>
       <ValidationMessage message={errors.conditions} />
 
       <label htmlFor="image">Image</label>
