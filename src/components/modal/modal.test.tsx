@@ -14,9 +14,7 @@ const createDefaultProps = (): ModalProps => ({
 const renderModal = (props?: Partial<ModalProps>) => {
   const defaultProps = createDefaultProps();
 
-  return render(
-    <Modal {...defaultProps} {...props}/>
-  )
+  return render(<Modal {...defaultProps} {...props} />);
 };
 
 describe('Modal component', () => {
@@ -38,7 +36,7 @@ describe('Modal component', () => {
       screen.getByRole('heading', { name: /User information/i }),
     ).toBeInTheDocument();
     expect(screen.getByText('Modal content')).toBeInTheDocument();
-  })
+  });
 
   test('does not render modal when isOpen is false', () => {
     renderModal({ isOpen: false });
@@ -61,7 +59,7 @@ describe('Modal component', () => {
 
   test('calls handleClose when backdrop is clicked', async () => {
     const handleClose = vi.fn();
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     renderModal({ handleClose });
 

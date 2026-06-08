@@ -20,6 +20,6 @@ const App = () => {
       </Modal>
     </>
   );
-}
+};
 
-export default App
+export default App;

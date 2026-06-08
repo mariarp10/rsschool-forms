@@ -22,13 +22,20 @@ export type ModalProps = {
   handleClose: () => void;
 };
 
-export const Modal: FC<ModalProps> = ({ isOpen, children, title, triggerRef, handleClose }) => {
+export const Modal: FC<ModalProps> = ({
+  isOpen,
+  children,
+  title,
+  triggerRef,
+  handleClose,
+}) => {
   const titleId = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
 
     if (!dialog || !isOpen) {
       return;
@@ -42,7 +49,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, children, title, triggerRef, han
         dialog.close();
       }
 
-      triggerRef.current?.focus();
+      trigger?.focus();
     };
   }, [isOpen, triggerRef]);
 
