@@ -14,7 +14,7 @@ import styles from './modal.module.css';
 
 const cn = classNames.bind(styles);
 
-type ModalProps = {
+export type ModalProps = {
   isOpen: boolean;
   children: ReactNode;
   title: string;
