@@ -44,15 +44,11 @@ export const formSchema = z
 
         return Number(value);
       },
-
       z
-
         .number({
           error: 'Age is required',
         })
-
         .int('Age must be an integer')
-
         .nonnegative('Age must not be negative'),
     ),
     email: z.email('Invalid email address'),
