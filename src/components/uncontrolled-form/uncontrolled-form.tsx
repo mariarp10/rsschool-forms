@@ -4,6 +4,9 @@ import style from './uncontrolled-form.module.css';
 import { useCountriesStore } from '@stores/countries.store';
 import { formSchema } from '@utils/form-schema';
 import { ValidationMessage } from '../validation-message/validation-message';
+import { convertToBase64 } from '@utils/convert-to-base64';
+import { type UserProfile } from '../../types';
+import { useProfilesStore } from '@stores/profiles.store';
 
 const cn = classNames.bind(style);
 
@@ -22,32 +25,30 @@ type FormErrors = Partial<Record<FormField, string>>;
 
 const FORM_FIELDS = new Set<string>([
   'name',
-
   'age',
-
   'email',
-
   'gender',
-
   'conditions',
-
   'image',
-
   'password',
-
   'confirmPassword',
-
   'country',
 ]);
 
 const isFormField = (value: unknown): value is FormField =>
   typeof value === 'string' && FORM_FIELDS.has(value);
 
-export const UncontrolledForm: FC = () => {
+type UncontrolledFormProps = {
+  closeModal: () => void;
+};
+
+export const UncontrolledForm: FC<UncontrolledFormProps> = ({ closeModal }) => {
   const countries = useCountriesStore((state) => state.countries);
+  const addProfile = useProfilesStore((state) => state.addProfile);
+
   const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -76,6 +77,24 @@ export const UncontrolledForm: FC = () => {
 
       return;
     }
+
+    const data = result.data;
+
+    const imageBase64 = await convertToBase64(data.image);
+
+    const profile: UserProfile = {
+      id: crypto.randomUUID(),
+      name: data.name,
+      age: data.age,
+      email: data.email,
+      gender: data.gender,
+      image: imageBase64,
+      country: data.country,
+    };
+
+    addProfile(profile);
+
+    closeModal();
 
     setErrors({});
   };

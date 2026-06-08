@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
 import { Modal } from './components/modal/modal';
+import { UncontrolledForm } from '@components/uncontrolled-form/uncontrolled-form';
+import { Profiles } from '@components/profiles/profiles';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -8,7 +10,7 @@ const App = () => {
   return (
     <>
       <button ref={openButtonref} onClick={() => setIsModalOpen(true)}>
-        Open Modal
+        Uncontrolled form
       </button>
       <Modal
         isOpen={isModalOpen}
@@ -16,8 +18,9 @@ const App = () => {
         triggerRef={openButtonref}
         handleClose={() => setIsModalOpen(false)}
       >
-        <p>This modal will render forms</p>
+        <UncontrolledForm closeModal={() => setIsModalOpen(false)} />
       </Modal>
+      <Profiles />
     </>
   );
 };
