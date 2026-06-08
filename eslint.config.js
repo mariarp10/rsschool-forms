@@ -143,11 +143,10 @@ export default defineConfig([
     files: ["**/*.tsx"],
     rules: {
       "@typescript-eslint/explicit-function-return-type": "off",
-      // "max-lines-per-function": [
-      //   "warn",
-      //   { max: 80, skipBlankLines: true, skipComments: true },
-      // ],
-      "max-lines-per-function": "off",
+      "max-lines-per-function": [
+        "warn",
+        { max: 80, skipBlankLines: true, skipComments: true },
+      ],
     },
   },
   {
