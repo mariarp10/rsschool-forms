@@ -32,7 +32,7 @@ const App = () => {
       </button>
 
       <button
-        ref={openUncontrolledRef}
+        ref={openControlledRef}
         type="button"
         onClick={() => setActiveForm('controlled')}
       >

@@ -38,6 +38,7 @@ export const ControlledForm: FC<ControlledFormProps> = ({ closeModal }) => {
 
   const handleValidSubmit = async (data: FormOutputValues) => {
     const imageBase64 = await convertToBase64(data.image);
+
     const profile: UserProfile = {
       id: crypto.randomUUID(),
       name: data.name,
