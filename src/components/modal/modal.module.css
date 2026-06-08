@@ -1,0 +1,29 @@
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 20px;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.close-button {
+  color: black;
+  height: 40px;
+  width: 40px;
+  align-self: end;
+}
+
+.content {
+  padding-inline: 20px;
+}
