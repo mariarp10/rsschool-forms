@@ -135,6 +135,8 @@ export default defineConfig([
       "unicorn/prefer-query-selector": "off",
       "unicorn/prevent-abbreviations": "off",
       "unicorn/explicit-length-check": "off",
+      "unicorn/consistent-function-scoping": "off",
+      "unicorn/prefer-add-event-listener": "off",
     },
   },
   {
@@ -143,7 +145,7 @@ export default defineConfig([
       "@typescript-eslint/explicit-function-return-type": "off",
       "max-lines-per-function": [
         "warn",
-        { max: 80, skipBlankLines: true, skipComments: true },
+        { max: 90, skipBlankLines: true, skipComments: true },
       ],
     },
   },
@@ -161,6 +163,7 @@ export default defineConfig([
       "**/build/**",
       "**/*.d.ts",
       "*.config.js",
+      "coverage/**"
     ],
   },
 ]);
